@@ -11,11 +11,15 @@ public class ControllerInput : MonoBehaviour
     private Transform tr;
     private float dirX = 0;
     private float dirZ = 0;
+    
+    // public Camera cam;
+    private float speed = 0.5f;
 
     // Start is called before the first frame update
     void Start()
     {
         tr = GetComponent<Transform>();
+        // camTr = camObj.GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -38,26 +42,36 @@ public class ControllerInput : MonoBehaviour
             var absY = Mathf.Abs(coord.y);
             if (absX > absY)
             {
-                // Right
-                if (coord.x > 0)
+                if (coord.x > 0) // 오
                     dirX = +1;
-                //Left
-                else
+                else // 왼
                     dirX = -1;
             }
             else
             {
-                // Up
-                if (coord.y > 0)
+                if (coord.y > 0) // 위(앞)
                     dirZ = +1;
-                // Down
-                else
+                else // 아래(뒤)
                     dirZ = -1;
             }
+
         }
         // 이동 방향 설정 후 이동
+        
         Vector3 moveDir = new Vector3(dirX * speedSide, 0, dirZ * speedForward);
         transform.Translate(moveDir * Time.smoothDeltaTime);
-
+        
     }
+
+
+    /*void MovePlayer()
+    {
+        if (OVRInput.Get(OVRInput.Button.PrimaryTouchpad))
+        {
+            Vector3 dir = camTr.TransformDirection(Vector3.forward);
+
+            transform.Translate(dir * speed);
+
+        }
+    }*/
 }
