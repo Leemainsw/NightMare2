@@ -26,4 +26,13 @@ public class ZombieController : MonoBehaviour
             nav.SetDestination(transform.position);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+    }
 }
