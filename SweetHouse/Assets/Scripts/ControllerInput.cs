@@ -15,7 +15,7 @@ public class ControllerInput : MonoBehaviour
 
     private Transform camTr;
     public Camera cam;
-    private float speed = 0.5f;
+    private float speed = 0.1f;
 
     // Start is called before the first frame update
     void Start()

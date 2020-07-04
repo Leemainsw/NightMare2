@@ -10,6 +10,8 @@ TagManager:
   - Gun1
   - Gun2
   - Gun3
+  - Zombie
+  - Bullet
   layers:
   - Default
   - TransparentFX
