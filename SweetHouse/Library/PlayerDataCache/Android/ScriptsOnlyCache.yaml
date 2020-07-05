@@ -3,7 +3,6 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - BoxPassword
     - Bullet
-    - ControllerInput
     - EnemyManager
     - GageBar
     - Interactable
@@ -14,6 +13,7 @@ ScriptsOnlyBuild:
     - PlayerEvents
     - PlayerMove
     - Pointer
+    - ServerComputer
     - ShootGun
     - SpawnManager
     - ZombieController
@@ -70,8 +70,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
-    - Class: 64
-      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 82
@@ -91,17 +89,19 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11316}
+      Script: {instanceID: 11314}
     - Class: 114
-      Script: {instanceID: 11392}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11536}
+      Script: {instanceID: 11534}
     - Class: 114
-      Script: {instanceID: 11560}
+      Script: {instanceID: 11558}
     - Class: 114
-      Script: {instanceID: 11614}
+      Script: {instanceID: 11612}
     - Class: 114
-      Script: {instanceID: 11898}
+      Script: {instanceID: 11896}
+    - Class: 114
+      Script: {instanceID: 12014}
     - Class: 114
       Script: {instanceID: 12024}
     - Class: 114
@@ -206,23 +206,23 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11316}
+      Script: {instanceID: 11314}
     - Class: 114
-      Script: {instanceID: 11392}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11536}
+      Script: {instanceID: 11534}
     - Class: 114
-      Script: {instanceID: 11548}
+      Script: {instanceID: 11546}
     - Class: 114
-      Script: {instanceID: 11560}
+      Script: {instanceID: 11558}
     - Class: 114
-      Script: {instanceID: 11614}
+      Script: {instanceID: 11612}
     - Class: 114
       Script: {instanceID: 12024}
     - Class: 114
-      Script: {instanceID: 12416}
+      Script: {instanceID: 12028}
     - Class: 114
-      Script: {instanceID: 12470}
+      Script: {instanceID: 12416}
     - Class: 114
       Script: {instanceID: 12574}
     - Class: 114
@@ -694,6 +694,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: OculusSampleFramework
     className: ControllerBoxController
+  - hash:
+      serializedVersion: 2
+      Hash: 634121be27abda967e1e1861f4cd3cef
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ServerComputer
   - hash:
       serializedVersion: 2
       Hash: a3d1f52d83f058b4557b96b9ac692b76
