@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -16,5 +17,21 @@ public class EnemyManager : MonoBehaviour
         nvAgent = this.gameObject.GetComponent<NavMeshAgent>();
 
         nvAgent.destination = playerTransform.position;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Player과 귀신의 충돌 -> success 씬으로 이동
+        if (other.gameObject.tag == "Bullet")
+        {
+            Destroy(gameObject);
+            Destroy(other.gameObject);
+        }
+
+        // Player과 귀신의 충돌 -> FAIL 씬으로 이동
+        if(other.gameObject.tag == "Player")
+        {
+          //  SceneManager.LoadScene("Fail");
+        }
     }
 }
