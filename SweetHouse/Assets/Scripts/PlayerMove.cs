@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public Vector2 joystick;
-    public float speed;
-    public GameObject centerEye;
-    public GameObject pObject;
-
-    // Start is called before the first frame update
+    // Use this for initialization
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        joystick = OVRInput.Get(OVRInput.Axis2D.PrimaryTouchpad);
+        moveObjectFunc();
+    }
 
-        transform.eulerAngles = new Vector3(0, centerEye.transform.localEulerAngles.y, 0);
-        transform.Translate(Vector3.forward * speed * joystick.y * Time.deltaTime);
-        transform.Translate(Vector3.right * speed * joystick.x * Time.deltaTime);
 
-        pObject.transform.position = Vector3.Lerp(pObject.transform.position, transform.position, 10f * Time.deltaTime);
+    private float speed_move = 3.0f;
+    private float speed_rota = 2.0f;
+
+    void moveObjectFunc()
+    {
+        float keyH = Input.GetAxis("Horizontal");
+        float keyV = Input.GetAxis("Vertical");
+        keyH = keyH * speed_move * Time.deltaTime;
+        keyV = keyV * speed_move * Time.deltaTime;
+        transform.Translate(Vector3.right * keyH);
+        transform.Translate(Vector3.forward * keyV);
+
+        float mouseX = Input.GetAxis("Mouse X");
+        //float mouseY = Input.GetAxis("Mouse Y");
+        transform.Rotate(Vector3.up * speed_rota * mouseX);
+       // transform.Rotate(Vector3.left * speed_rota * mouseY);
+
     }
 }

@@ -19,7 +19,7 @@ public class VideoManager : MonoBehaviour
         Debug.Log("Event for movie end called");
         player.Stop();
 
-        SceneManager.LoadScene("GameStart");
+        SceneManager.LoadScene("Stage1");
 
     }
 }

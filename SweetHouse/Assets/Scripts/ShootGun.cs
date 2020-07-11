@@ -29,7 +29,7 @@ public class ShootGun : MonoBehaviour
     void Update()
     {
         shootTime += Time.deltaTime;
-        if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)&&bulletCount<6)
+        if((OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || Input.GetKey(KeyCode.Z)) && bulletCount<6)
         {
             if(shootTime>0.5f)
             {

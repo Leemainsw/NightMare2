@@ -14,8 +14,11 @@ public class EnemyManager : MonoBehaviour
     {
         _transform = this.gameObject.GetComponent<Transform>();
         playerTransform = GameObject.FindWithTag("player").GetComponent<Transform>();
-        nvAgent = this.gameObject.GetComponent<NavMeshAgent>();
+        nvAgent = this.gameObject.GetComponent<NavMeshAgent>();     
+    }
 
+    private void Update()
+    {
         nvAgent.destination = playerTransform.position;
     }
 

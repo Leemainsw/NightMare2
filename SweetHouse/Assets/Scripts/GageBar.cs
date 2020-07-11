@@ -34,10 +34,6 @@ public class GageBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Z) || OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
-        {
-            value += 0.1f;
-        }
 
         if(FindGun[0] && FindGun[1] && FindGun[2])
         {
@@ -53,10 +49,11 @@ public class GageBar : MonoBehaviour
             Debug.Log("Gun1과 충돌");
             if (value < 30)
             {
-                //if (Input.GetKey(KeyCode.Z))
-                //{
-                //    value += 0.1f;
-                //}
+                if (Input.GetKey(KeyCode.Z) || OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+                {
+                    value += 0.1f;
+                }
+
             }
 
             else
@@ -75,10 +72,11 @@ public class GageBar : MonoBehaviour
             Debug.Log("Gun2과 충돌");
             if (value < 30)
             {
-                //if (Input.GetKey(KeyCode.Z))
-                //{
-                //    value += 0.1f;
-                //}
+                if (Input.GetKey(KeyCode.Z) || OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+                {
+                    value += 0.1f;
+                }
+
             }
 
             else
@@ -96,10 +94,11 @@ public class GageBar : MonoBehaviour
             Debug.Log("Gun3과 충돌");
             if (value < 30)
             {
-                //if (Input.GetKey(KeyCode.Z))
-                //{
-                //    value += 0.1f;
-                //}
+                if (Input.GetKey(KeyCode.Z) || OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+                {
+                    value += 0.1f;
+                }
+
             }
 
             else

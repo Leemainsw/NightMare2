@@ -32,6 +32,8 @@ public class ServerComputer : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("충돌");
+
         if(other.gameObject.tag == "Bullet")
         {
             Destroy(other.gameObject);
